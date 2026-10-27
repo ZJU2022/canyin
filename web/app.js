@@ -60,6 +60,8 @@ function render() {
   if (state.tab === "shop") app.innerHTML = renderShop();
   if (state.tab === "money") app.innerHTML = renderMoney();
   if (state.tab === "before") app.innerHTML = renderBefore();
+  if (state.tab === "base") app.innerHTML = renderBase();
+  if (state.tab === "product") app.innerHTML = renderProduct();
   applyPause();
 }
 
@@ -67,7 +69,7 @@ function renderShop() {
   const shop = state.shop;
   const part = partById(shop, state.selected);
   const people = shop.people.map((item) => `<p><b>${esc(item.name)}。</b>${esc(item.role)}</p>`).join("");
-  return `<h1>${esc(shop.title)}</h1>
+  return `<h1>基础模型</h1>
     <p>${esc(shop.intro)}</p>
     ${shopPicture(shop, state.selected)}
     <div class="box">
@@ -96,7 +98,7 @@ function renderMoney() {
     ).join("");
     return `<h2>${title}</h2>${fields}`;
   }).join("");
-  return `<h1>一碗和一天</h1>
+  return `<h1>算账器</h1>
     <p>改左边的数字，右边的图跟着变。保本那句话由规则算出来。</p>
     <div class="rules"><strong>公式</strong>保本碗数 = 一天固定开支 ÷ 平均一碗留下的钱。固定开支 = 月租 ÷ 30 + 水电耗材 + 人工。</div>
     ${state.error ? `<div class="box warn">${esc(state.error)}</div>` : ""}
@@ -132,7 +134,7 @@ function renderBefore() {
   const pits = shop.pits.map((item) =>
     `<tr><td>${esc(item.name)}</td><td>${esc(item.look)}</td><td>${esc(item.avoid)}</td></tr>`,
   ).join("");
-  return `<h1>租下门面之前</h1>
+  return `<h1>三个必答</h1>
     <p class="say">店能不能赚钱，在签字租房之前就算得出来。三道门按这个顺序过。</p>
     <div class="flow">${arrows.join("")}<div class="arrow">→</div><div class="card"><h3>才租</h3><p>三道都过了，再签。</p></div></div>
     <h2>三个问题</h2>
@@ -155,6 +157,24 @@ function renderBefore() {
     </table>`;
 }
 
+function renderBase() {
+  return `<h1>商业模式</h1>
+    <p class="say">店周围就算有 5000 人，赚的也只是留下来的那 200 人。他们每个工作日来吃 1 顿，这顿留下的钱才是利润。</p>
+    ${basePicture()}
+    <div class="box">
+      <p class="say">分支一和分支二，都要等这 200 人真的每个工作日来了再做。分支三会把当天的人数做大：多出来的是慕名和打卡，来一次就走。当天 500 人里面，每天都会来的还是那 200 人。</p>
+    </div>`;
+}
+
+function renderProduct() {
+  return `<h1>核心产品设计</h1>
+    <p class="say">核心产品是一道菜。客人用这道菜记住这家店。给谁吃、妈妈做不做得稳、这碗扣掉食材后还留不留得下钱，三件一起过，它才算设计完。</p>
+    ${productPicture()}
+    <div class="box">
+      <p class="say">现在还没有这道菜，就一道一道试。记得住、做得稳、留得下，三道都过再把它写成核心。有一道不过就换下一道。服务和宣传不能代替这道菜。商业模式里那 200 人每个工作日来吃的，就是它。</p>
+    </div>`;
+}
+
 function applyPause() {
   document.querySelectorAll("#app svg").forEach((svg) => {
     if (state.paused) svg.pauseAnimations();
@@ -163,7 +183,7 @@ function applyPause() {
 }
 
 function showTab(name) {
-  state.tab = name === "money" || name === "before" ? name : "shop";
+  state.tab = ["money", "before", "base", "product"].includes(name) ? name : "shop";
   document.querySelectorAll(".tabs button").forEach((btn) => {
     const on = btn.dataset.tab === state.tab;
     btn.classList.toggle("on", on);

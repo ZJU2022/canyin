@@ -178,3 +178,128 @@ function moneyPicture(input, calc) {
     ${bars}
   </svg>`;
 }
+
+// basePicture 画出固定客：5000 人里留下 200 个每天来的人，以及之后的三条路。
+function basePicture() {
+  return `<svg class="stage" viewBox="0 0 980 740" role="img" aria-label="周围 5000 人留下 200 个每天来的固定客，之后分出复制、卖课、网上名号三条路">
+    <rect x="24" y="24" width="210" height="132" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="129" y="62" text-anchor="middle" font-size="15" fill="#666">店周围</text>
+    <text x="129" y="96" text-anchor="middle" font-size="28" font-weight="700">5000 人</text>
+    <text x="129" y="128" text-anchor="middle" font-size="14" fill="#666">每天都要吃饭</text>
+
+    <text x="268" y="96" text-anchor="middle" font-size="22" fill="#666">→</text>
+
+    <rect x="300" y="24" width="230" height="132" fill="#f6f6f6" stroke="#1a1a1a"></rect>
+    <text x="415" y="58" text-anchor="middle" font-size="16" font-weight="700">产品、服务</text>
+    <text x="415" y="86" text-anchor="middle" font-size="16" font-weight="700">口碑、宣传</text>
+    <text x="415" y="122" text-anchor="middle" font-size="14" fill="#666">把人从 5000 里留下</text>
+
+    <text x="564" y="96" text-anchor="middle" font-size="22" fill="#666">→</text>
+
+    <rect x="596" y="16" width="360" height="148" fill="#fff6cc" stroke="#1a1a1a" stroke-width="2.5"></rect>
+    <text x="776" y="52" text-anchor="middle" font-size="15" fill="#666">基本盘</text>
+    <text x="776" y="90" text-anchor="middle" font-size="28" font-weight="700">200 人</text>
+    <text x="776" y="122" text-anchor="middle" font-size="16">每个工作日来，吃 1 顿</text>
+    <text x="776" y="148" text-anchor="middle" font-size="15" fill="#2f6f4e">这顿留下的钱，才是赚的</text>
+
+    <rect x="24" y="184" width="932" height="52" fill="#f6f6f6" stroke="#ddd"></rect>
+    <text x="486" y="216" text-anchor="middle" font-size="16">赚的 = 200 人 × 每天 1 顿 × 每顿留下的钱 − 一天的开支</text>
+
+    <text x="24" y="276" font-size="16" font-weight="700">这 200 人稳住之后，才分出三条路</text>
+
+    <rect x="24" y="296" width="300" height="420" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="40" y="332" font-size="18" font-weight="700">分支一 · 复制</text>
+    <text x="40" y="372" font-size="22" font-weight="700" fill="#2f6f4e">200 → 400 → 800</text>
+    <text x="40" y="414" font-size="15">把这一家店怎么做</text>
+    <text x="40" y="440" font-size="15">写成固定步骤</text>
+    <text x="40" y="480" font-size="15">然后才是拉投资、</text>
+    <text x="40" y="506" font-size="15">开分店，或把店扩大</text>
+    <text x="40" y="560" font-size="15" fill="#666">后话。</text>
+    <text x="40" y="586" font-size="15" fill="#666">人数先要是真的，</text>
+    <text x="40" y="612" font-size="15" fill="#666">每个工作日都来。</text>
+
+    <rect x="340" y="296" width="300" height="420" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="356" y="332" font-size="18" font-weight="700">分支二 · 卖课</text>
+    <text x="356" y="378" font-size="15">店用来证明你做得成</text>
+    <text x="356" y="418" font-size="15">真正卖出去的是课</text>
+    <text x="356" y="444" font-size="15">一种虚拟产品</text>
+    <text x="356" y="490" font-size="15">付钱的人换成了</text>
+    <text x="356" y="516" font-size="15">想开店的人</text>
+    <text x="356" y="560" font-size="15" fill="#666">来吃饭的那 200 人</text>
+    <text x="356" y="586" font-size="15" fill="#666">不再是这门收入的客人</text>
+
+    <rect x="656" y="296" width="300" height="420" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="672" y="332" font-size="18" font-weight="700">分支三 · 网上名号</text>
+    <text x="672" y="368" font-size="15">大众点评、短视频</text>
+    <text x="672" y="400" font-size="15">慕名而来的人</text>
+    <text x="672" y="426" font-size="15">旅游时来打卡的人</text>
+    <rect x="672" y="456" width="112" height="28" fill="#c5e0d0" stroke="#2f6f4e"></rect>
+    <rect x="784" y="456" width="148" height="28" fill="#f3c1b8" stroke="#c4473a"></rect>
+    <text x="728" y="506" text-anchor="middle" font-size="13" fill="#2f6f4e">200 每天来</text>
+    <text x="858" y="506" text-anchor="middle" font-size="13" fill="#c4473a">300 来一次</text>
+    <text x="672" y="546" font-size="16" font-weight="700">当天可以到 500 人</text>
+    <text x="672" y="584" font-size="15">基本盘仍是 200</text>
+    <text x="672" y="624" font-size="15" fill="#666">名号停了，</text>
+    <text x="672" y="650" font-size="15" fill="#666">打卡的 300 人离开，</text>
+    <text x="672" y="676" font-size="15" fill="#666">每天还是这 200 人。</text>
+  </svg>`;
+}
+
+// productPicture 画出核心产品：一道菜要同时过客人、出品和账。
+function productPicture() {
+  return `<svg class="stage" viewBox="0 0 980 700" role="img" aria-label="核心产品是一道菜，要同时过给谁吃、妈妈做得稳、账上留得下">
+    <rect x="24" y="16" width="300" height="220" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="40" y="52" font-size="18" font-weight="700">给谁吃</text>
+    <text x="40" y="90" font-size="15">只按三个必答里</text>
+    <text x="40" y="116" font-size="15">锁住的那一种人</text>
+    <text x="40" y="152" font-size="15">价格、份量、出餐速度</text>
+    <text x="40" y="178" font-size="15">按他们能接受的来</text>
+    <text x="40" y="210" font-size="15" fill="#666">不为所有人各做一道</text>
+
+    <rect x="340" y="16" width="300" height="220" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="356" y="52" font-size="18" font-weight="700">妈妈做得出</text>
+    <text x="356" y="90" font-size="15">每碗味道要一样</text>
+    <text x="356" y="116" font-size="15">午市、晚市都出得完</text>
+    <text x="356" y="152" font-size="15">菜一多，味道和成本</text>
+    <text x="356" y="178" font-size="15">会一起失控</text>
+    <text x="356" y="210" font-size="15" fill="#666">先确认她能重复做</text>
+
+    <rect x="656" y="16" width="300" height="220" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="672" y="52" font-size="18" font-weight="700">账上留得下</text>
+    <text x="672" y="90" font-size="15">售价 − 这一碗的食材</text>
+    <text x="672" y="116" font-size="15">= 这碗留下的钱</text>
+    <text x="672" y="152" font-size="15">拿到算账器里看</text>
+    <text x="672" y="178" font-size="15">盖不住一天的开支</text>
+    <text x="672" y="210" font-size="15" fill="#666">这道就还不能当核心</text>
+
+    <rect x="24" y="260" width="932" height="118" fill="#fff6cc" stroke="#1a1a1a" stroke-width="2.5"></rect>
+    <text x="48" y="306" font-size="15" fill="#666">核心产品</text>
+    <text x="48" y="346" font-size="28" font-weight="700">一道菜</text>
+    <text x="280" y="306" font-size="16">客人用这道菜记住这家店</text>
+    <text x="280" y="336" font-size="16">一道都说不清，菜单再长也没有核心</text>
+    <text x="280" y="366" font-size="16">服务、口碑、宣传都不能代替它</text>
+
+    <text x="24" y="418" font-size="16" font-weight="700">现在还没有这道菜，就一道一道试。三道都过才留下</text>
+
+    <rect x="24" y="438" width="300" height="168" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="40" y="474" font-size="18" font-weight="700">记得住</text>
+    <text x="40" y="512" font-size="15">别人能不能一句话</text>
+    <text x="40" y="538" font-size="15">说出这家店卖什么</text>
+    <text x="40" y="574" font-size="15" fill="#666">说不出，就换下一道</text>
+
+    <rect x="340" y="438" width="300" height="168" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="356" y="474" font-size="18" font-weight="700">做得稳</text>
+    <text x="356" y="512" font-size="15">妈妈能不能连续做出</text>
+    <text x="356" y="538" font-size="15">同样的一碗</text>
+    <text x="356" y="574" font-size="15" fill="#666">做不稳，就换下一道</text>
+
+    <rect x="656" y="438" width="300" height="168" fill="#fff" stroke="#1a1a1a"></rect>
+    <text x="672" y="474" font-size="18" font-weight="700">留得下</text>
+    <text x="672" y="512" font-size="15">扣掉食材之后</text>
+    <text x="672" y="538" font-size="15">算账器里这碗还赚</text>
+    <text x="672" y="574" font-size="15" fill="#666">不赚，就换下一道</text>
+
+    <rect x="24" y="626" width="932" height="52" fill="#f6f6f6" stroke="#ddd"></rect>
+    <text x="486" y="658" text-anchor="middle" font-size="16">三道都过，才写成核心产品。先不要摆一长串菜。</text>
+  </svg>`;
+}
